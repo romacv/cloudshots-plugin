@@ -54,11 +54,11 @@ Nothing is deleted permanently: the most any tool does is move a screenshot to T
 
 ## How it works
 
-The plugin is a small script, `server.js`, that Claude starts with `node`. It reads one JSON-RPC message per line from Claude, sends each one to the CloudShots server that runs inside the Mac app at `http://cloudshots.local:47819/mcp`, and writes the answer back. If the name `cloudshots.local` does not resolve, it uses `http://127.0.0.1:47819/mcp` instead. Both addresses point to your own Mac; the server listens on the loopback interface only. Every request carries your access key as a bearer token. The script has no dependencies and no other network use.
+The plugin is a small script, `server.js`, that Claude starts with `node`. It reads one JSON-RPC message per line from Claude, sends each one to the CloudShots server that runs inside the Mac app at `http://cloudshots.local:47819/mcp`, and writes the answer back. The name is used only when it resolves to a loopback address on this Mac; if it does not resolve, or resolves to anything else, the script uses `http://127.0.0.1:47819/mcp` instead, so the access key is never sent to another machine. The server listens on the loopback interface only. A request that gets no answer within two minutes fails with an error instead of hanging. Every request carries your access key as a bearer token. The script has no dependencies and no other network use.
 
 ## Privacy Policy
 
-The plugin sends nothing off your Mac. Requests go only to `cloudshots.local` or `127.0.0.1`, the CloudShots app on this computer. The plugin collects no data, keeps no logs of your library and has no analytics. What Claude does with results it receives is governed by your Claude plan. The CloudShots privacy policy is at https://cloudshots.app/privacy.
+The plugin sends nothing off your Mac. Requests go only to the loopback address of this computer (`127.0.0.1`, or `cloudshots.local` when it resolves there), where the CloudShots app listens. The plugin collects no data, keeps no logs of your library and has no analytics. What Claude does with results it receives is governed by your Claude plan. The CloudShots privacy policy is at https://cloudshots.app/privacy.
 
 ## Troubleshooting
 
