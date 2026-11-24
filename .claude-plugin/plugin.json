@@ -1,0 +1,31 @@
+{
+  "name": "cloudshots",
+  "displayName": "CloudShots",
+  "version": "1.0.0",
+  "description": "Search, read, tag, rename, pin and capture screenshots in your CloudShots library on this Mac from Claude.",
+  "author": {
+    "name": "CloudShots",
+    "url": "https://cloudshots.app"
+  },
+  "license": "MIT",
+  "homepage": "https://cloudshots.app",
+  "repository": "https://github.com/romacv/cloudshots-plugin",
+  "keywords": ["screenshots", "screenshot-library", "ocr", "tags", "macos", "cloudshots"],
+  "icon": "./icon.png",
+  "documentationUrl": "https://cloudshots.app/connect-ai-agents-mac",
+  "supportUrl": "https://cloudshots.app/support",
+  "privacyPolicyUrl": "https://cloudshots.app/privacy",
+  "termsOfServiceUrl": "https://cloudshots.app/terms",
+  "network": {
+    "hosts": ["cloudshots.local", "127.0.0.1"]
+  },
+  "userConfig": {
+    "access_key": {
+      "type": "string",
+      "title": "CloudShots access key",
+      "description": "In CloudShots for Mac, open Settings > AI & integrations, find the MCP server card and choose Copy Access Key.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

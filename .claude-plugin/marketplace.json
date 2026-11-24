@@ -1,0 +1,17 @@
+{
+  "name": "cloudshots",
+  "description": "CloudShots plugin for Claude.",
+  "owner": {
+    "name": "CloudShots",
+    "url": "https://cloudshots.app"
+  },
+  "plugins": [
+    {
+      "name": "cloudshots",
+      "source": "./",
+      "description": "Search, read, tag, rename, pin and capture screenshots in your CloudShots library on this Mac from Claude.",
+      "category": "productivity",
+      "tags": ["screenshots", "macos", "library"]
+    }
+  ]
+}
